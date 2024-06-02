@@ -5,13 +5,16 @@ from datetime import date
 class RadioCreate(BaseModel):
     nombre: str
 
+    class Config:
+        from_attributes = True  # Configuración nueva
+
 # Schema para la respuesta de los endpoints que devuelven datos de Radio
 class Radio(BaseModel):
     id: int
     nombre: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Configuración nueva
 
 class ProgramaCreate(BaseModel):
     nombre: str
@@ -19,6 +22,9 @@ class ProgramaCreate(BaseModel):
     certificado_locucion: str
     url_banner: str
     fk_radio: int
+
+    class Config:
+        from_attributes = True  # Configuración nueva
 
 class Programa(BaseModel):
     id_programa: int
@@ -28,13 +34,16 @@ class Programa(BaseModel):
     url_banner: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Configuración nueva
 
 class ProgramacionCreate(BaseModel):
     nombre: str
     url_audio: str
     fecha_transmision: date
     fk_programa: int
+
+    class Config:
+        from_attributes = True  # Configuración nueva
 
 class Programacion(BaseModel):
     id_programacion: int
@@ -44,13 +53,16 @@ class Programacion(BaseModel):
     fk_programa: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Configuración nueva
 
 class ArtistaCreate(BaseModel):
     nombre: str
     informacion: str
     url_image: str
     fk_radio: int
+
+    class Config:
+        from_attributes = True  # Configuración nueva
 
 class Artista(BaseModel):
     id_artista: int
@@ -60,7 +72,7 @@ class Artista(BaseModel):
     fk_radio: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Configuración nueva
 
 class PublicidadCreate(BaseModel):
     nombre: str
@@ -70,6 +82,9 @@ class PublicidadCreate(BaseModel):
     url_instagram: str = None
     url_facebook: str = None
     fk_radio: int
+
+    class Config:
+        from_attributes = True  # Configuración nueva
 
 class Publicidad(BaseModel):
     id_publicidad: int
@@ -82,7 +97,7 @@ class Publicidad(BaseModel):
     fk_radio: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Configuración nueva
 
 class ServicioSocialCreate(BaseModel):
     nombre: str
@@ -91,6 +106,9 @@ class ServicioSocialCreate(BaseModel):
     tipo: str
     url_audio: str = None  # Opcional dependiendo del tipo
     fk_radio: int
+
+    class Config:
+        from_attributes = True  # Configuración nueva
 
 class ServicioSocial(BaseModel):
     id_servicio: int
@@ -102,7 +120,7 @@ class ServicioSocial(BaseModel):
     fk_radio: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Configuración nueva
 
 class UsuarioCreate(BaseModel):
     nombre: str
@@ -110,6 +128,9 @@ class UsuarioCreate(BaseModel):
     telefono: str
     password: str
     fk_radio: int
+
+    class Config:
+        from_attributes = True  # Configuración nueva
 
 class Usuario(BaseModel):
     id_usuario: int
@@ -119,13 +140,16 @@ class Usuario(BaseModel):
     fk_radio: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Configuración nueva
 
 class HiloMusicalCreate(BaseModel):
     nombre: str
     url_musical: str
     url_image: str
     fk_usuario: int
+
+    class Config:
+        from_attributes = True  # Configuración nueva
 
 class HiloMusical(BaseModel):
     id_hilo: int
@@ -135,4 +159,4 @@ class HiloMusical(BaseModel):
     fk_usuario: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Configuración nueva

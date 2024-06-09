@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Define your custom color palette here */
+.bg-custom-light {
+    background-color: #F0E5CF; /* Example color */
+}
+.text-custom-dark {
+    color: #2C3E50; /* Example color */
+}
+.border-custom {
+    border-color: #E67E22; /* Example color */
+}

@@ -1,235 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radio Songs International</title>
-    <!-- TailwindCSS -->
-    <link href="{{url_for('static',path='src/app.css')}}" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <link href="{{url_for('static',path='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{url_for('static',path='css/fontawesome.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',path='css/templatemo-scholar.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',path='css/owl.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',path='css/animate.css')}}">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
-TemplateMo 586 Scholar
-https://templatemo.com/tm-586-scholar
--->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .overlay {
+            background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        /* Asegúrate de ajustar la ruta de la imagen a donde la tengas almacenada */
+        .hamburger-icon {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
 </head>
-<body>
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="/" class="logo">
-                        <h1>RSI</h1>
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                      <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
-                      <li class="scroll-to-section"><a href="#services">Artistas</a></li>
-                      <li class="scroll-to-section"><a href="#contact">Contacto</a></li>
-                      <li class="scroll-to-section"><a href="#team">La televisión</a></li>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
+<body class="bg-gray-900 text-white h-screen">
+    <header class="container mx-auto py-4 flex justify-between items-center">
+        <div class="container mx-auto py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">radio.co</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-gray-300">Home</a>
+                <a href="#about" class="hover:text-gray-300">About</a>
+                <a href="#services" class="hover:text-gray-300">Services</a>
+                <a href="#contact" class="hover:text-gray-300">Contact</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <img src="hamburger-icon.png" alt="Menu" class="hamburger-icon">
+            </button>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden flex flex-col items-center bg-blue-600 text-white space-y-4 py-4">
+            <a href="#home" class="hover:text-gray-300">Home</a>
+            <a href="#about" class="hover:text-gray-300">About</a>
+            <a href="#services" class="hover:text-gray-300">Services</a>
+            <a href="#contact" class="hover:text-gray-300">Contact</a>
+        </nav>
+    </header>
+
+    <section class="relative h-screen">
+        <div class="absolute inset-0">
+            <img src="{{ url_for('static', path='images/Fondo1_rs.jpg') }}" alt="Radio Songs" class="w-full h-full object-cover">
+            <div class="overlay absolute inset-0"></div>
+        </div>
+        <div class="relative flex flex-col items-center justify-center h-full text-center px-4">
+            <h1 class="text-5xl font-bold">Create. Schedule. Broadcast. Grow.</h1>
+            <p class="text-xl mt-4">Radio.co is an all-in-one internet radio platform that lets you broadcast, entertain, and grow your station with ease. Simple enough for beginners, powerful enough for the pros.</p>
+            <div class="mt-8">
+                <button class="bg-red-500 text-white px-6 py-3 rounded-full mr-4">Try it free for 7 days</button>
+                <a href="#" class="text-white underline">or Request a Demo</a>
             </div>
         </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
-  <div class="main-banner bg-gray-700" id="top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="owl-carousel owl-banner">
-            <div class="item item-1">
-              <div class="header-text">
-                <h2>La Radio</h2>
-                <div class="buttons">
-                  <div class="icon-button">
-                    <a><i class="fa fa-play"></i> Escuchanos!</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="services section" id="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="service-item">
-            <div class="icon">
-              <img src="{{url_for('static',path='images/service-01.png')}}" alt="online degrees">
-            </div>
-            <div class="main-content">
-              <h4>Online Degrees</h4>
-              <p>Whenever you need free templates in HTML CSS, you just remember TemplateMo website.</p>
-              <div class="main-button">
-                <a href="#">Read More</a>
-              </div>
-            </div>
-          </div>
+    <section class="relative h-screen mt-[-10rem]">
+        <div class="absolute inset-0">
+            <img src="{{ url_for('static', path='images/separator-white.svg') }}" alt="Separator" class="w-full h-full object-cover">
+            <div class="overlay absolute inset-0"></div>
         </div>
-      </div>
-    </div>
-  </div>
+    </section>
+    
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-  <section class="section courses" id="courses" >
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <div class="section-heading">
-            <h2>Programas</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row event_box">
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-          <div class="events_item">
-            <div class="thumb">
-              <a href="#"><img src="{{url_for('static',path='images/course-01.jpg')}}" alt=""></a>
-            </div>
-            <div class="down-content">
-              <span class="author">Stella Blair</span>
-              <h4>Jazz con Jass</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section fun-facts">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="wrapper">
-            <div class="row">
-              <div class="col-lg-6 col-md-6">
-                <div class="counter">
-                  <h2>Radio Songs Televisión</h2>
-                   <p>Happy Students</p>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <div class="counter">
-                  <h2>Artistas</h2>
-                  <p>Course Hours</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="team section" id="team">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <div class="team-member">
-            <div class="main-content">
-              <img src="{{url_for('static',path='images/member-01.jpg')}}" alt="">
-              <span class="category">UX Teacher</span>
-              <h4>Sophia Rose</h4>
-              <ul class="social-icons">
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> 
-
-  <div class="contact-us section" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6  align-self-center">
-          <div class="section-heading">
-            <h6>Contact Us</h6>
-            <h2>Feel free to contact us anytime</h2>
-            <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge. You may support us by sharing our website to your friends.</p>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="contact-us-content">
-            <form id="contact-form" action="" method="post">
-              <div class="row">
-                <div class="col-lg-12">
-                  <fieldset>
-                    <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
-                  </fieldset>
-                </div>
-                <div class="col-lg-12">
-                  <fieldset>
-                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
-                  </fieldset>
-                </div>
-                <div class="col-lg-12">
-                  <fieldset>
-                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
-                  </fieldset>
-                </div>
-                <div class="col-lg-12">
-                  <fieldset>
-                    <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
-                  </fieldset>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div class="container">
-      <div class="col-lg-12">
-        <p>Copyright © 2036 Scholar Organization. All rights reserved. &nbsp;&nbsp;&nbsp; Design: <a href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a> Distribution: <a href="https://themewagon.com" rel="nofollow" target="_blank">ThemeWagon</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="{{url_for('static',path='/vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{url_for('static',path='/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-  <script src="{{url_for('static',path='/js/isotope.min.js')}}"></script>
-  <script src="{{url_for('static',path='/js/owl-carousel.js')}}"></script>
-  <script src="{{url_for('static',path='/js/custom.js')}}"></script>
-
-  </body>
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
+</body>
 </html>

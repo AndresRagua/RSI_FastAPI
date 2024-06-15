@@ -1,7 +1,5 @@
 from fastapi import FastAPI, HTTPException
 import uvicorn
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
 from app.routers import home, radio, programa, programacion, artista, publicidad, servicio, usuario, hilo
 from app.db.database import Base, engine
 
@@ -10,12 +8,6 @@ def create_tables():
 create_tables()
 
 app = FastAPI()
-
-# Monta el directorio de archivos estáticos
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-# Configura el directorio para las plantillas Jinja2
-templates = Jinja2Templates(directory="templates")
 
 app.include_router(radio.router)
 app.include_router(programa.router)
